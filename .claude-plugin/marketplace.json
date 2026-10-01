@@ -1,10 +1,10 @@
 {
-  "name": "nexusflex",
+  "name": "nexusflex-claude",
   "owner": { "name": "Nexus Flex", "url": "https://nexusflex.com.ar" },
   "metadata": { "description": "Plugins de Nexus Flex para Claude (Desktop y Code)." },
   "plugins": [
     {
-      "name": "nexusflex",
+      "name": "nexusflex-claude",
       "description": "El MCP de Nexus Flex + la skill de control por foto, en un solo instalable. Se autoriza una vez desde el navegador.",
       "source": "./plugins/nexusflex",
       "homepage": "https://nexusflex.com.ar/mcp"

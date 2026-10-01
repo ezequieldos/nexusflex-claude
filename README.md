@@ -10,7 +10,7 @@ Plugin oficial de [Nexus Flex](https://nexusflex.com.ar): trae **juntos** el MCP
 
 ```bash
 claude plugin marketplace add ezequieldos/nexusflex-claude
-claude plugin install nexusflex@nexusflex
+claude plugin install nexusflex@nexusflex-claude
 ```
 
 Necesitás Node.js 20 o más nuevo. La primera vez que lo usás te muestra un link y un código para **autorizar** con tu cuenta de Nexus Flex (no se pone la contraseña en ningún lado).
