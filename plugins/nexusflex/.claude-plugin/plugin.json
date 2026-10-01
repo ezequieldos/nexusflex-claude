@@ -1,7 +1,7 @@
 {
   "name": "nexusflex",
   "description": "Nexus Flex en Claude: el MCP (altas, consultas, control por foto; nunca mueve dinero) y las skills (control por foto) en un solo instalable.",
-  "version": "3.74.1",
+  "version": "3.75.0",
   "author": {
     "name": "Nexus Flex",
     "url": "https://nexusflex.com.ar"

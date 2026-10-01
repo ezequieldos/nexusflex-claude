@@ -45,7 +45,8 @@ Mostrá un resumen corto por día: fotos, ok, altas nuevas, preguntas y errores 
 
 - **cuentasMLDesconocidas**: preguntá de qué nodo y cliente es cada cuenta. Mostrá el vendedor, la marca a mano y la foto de ejemplo. Con el id del cliente: `control_foto_foto ruta:<foto> carpeta:<…> fecha:<…> cliente:<id>`. Si es un vendedor de otro nodo, puede vincular o aprender la cuenta ese nodo, y después se vuelve a correr la carpeta.
 - **responsable** (la zona tiene varios responsables o ninguno): preguntá quién lo llevó y repetí la foto con `nodoEntrega`.
-- **duplicado / no_ml / sin_codigo / fuera_de_red**: van a revisión manual. La foto quedó copiada en `<día>/_sin_identificar`.
+- **sin_codigo** (la etiqueta no tiene número: es un envío particular que imprimió el vendedor): leé la dirección de la foto (y localidad/destinatario si se ven) y repetí `control_foto_foto ruta:<foto> carpeta:<…> fecha:<…> direccion:<…> localidad:<…>` con `cliente:<id>` o `nodo:<…>` (el nodo que te lo dio, queda sin vendedor). Busca por dirección si ya está cargado; si no, lo carga con un tracking propio de Nexus Flex. Si la dirección no se lee, no la inventes: va a revisión manual.
+- **duplicado / no_ml / fuera_de_red**: van a revisión manual. La foto quedó copiada en `<día>/_sin_identificar`.
 - **erroresDeCarpeta**: una carpeta no coincide con un grupo o cadete del nodo. Que la renombren (con `control_foto_estructura` a la vista).
 
 **Más cómodo:** al aplicar, lo dudoso se sube solo a la app, en **Logística → 📷 Control por foto**. Ahí cada foto se ve grande y se elige:
