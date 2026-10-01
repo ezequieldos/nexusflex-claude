@@ -9,9 +9,11 @@ Sirve para cualquier nodo y cualquiera de sus grupos logísticos. El servidor ha
 
 ## 0. Empezar: crear las carpetas
 
-Cuando el usuario dice "hagamos el control por foto del día tal", preguntale dónde quiere las carpetas (por ejemplo el Escritorio) y corré:
+Cuando el usuario dice "hagamos el control por foto del día tal", corré:
 
-`control_foto_preparar ruta:"<dónde>" fechas:"<día o días>"`
+`control_foto_preparar fechas:"<día o días>"`
+
+Por seguridad, el MCP solo lee y crea adentro de **la carpeta del control por foto**: la que el usuario eligió al instalar el plugin (si no eligió, `Documentos\Control por foto`). `control_foto_estructura` te dice cuál es (`carpetaDelControl`). Las rutas se pasan relativas a ella (`Lunes 14-9-2026`); si el usuario tiene las fotos en otro lado, pedile que las mueva ahí: una ruta de afuera se rechaza.
 
 Las fechas pueden ser un día (`14/09/2026`), un rango (`14/09 a 19/09`) o una lista (`14/09, 16/09`). Se crea una carpeta por día, con las subcarpetas de todos sus grupos y cadetes con el nombre exacto y un `LEEME.txt`. Decile dónde quedaron y que suelte cada foto en la carpeta que corresponde. Las que no use quedan vacías y no pasa nada.
 
