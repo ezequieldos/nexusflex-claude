@@ -31,6 +31,7 @@ Una carpeta por día. El nombre tiene que traer la fecha (`Lunes 14-9-2026`, `14
 
 - Los nombres de `<grupo>` y `<cadete>` son los del nodo. Llamá a `control_foto_estructura` para tenerlos y mostrárselos al usuario la primera vez.
 - Carpetas intermedias que no son grupo ni cadete (ej. `Matanza`, `1ra vuelta`) se ignoran.
+- El mismo paquete en `DADOS/…` y en `RECIBIDOS/…` el mismo día NO es un duplicado: te lo dieron y lo pasaste. Vale DADOS (cómo salió); RECIBIDOS es el respaldo por si algo no se registró y esa foto solo se suma al envío. No le preguntes al usuario por eso.
 - Un grupo que solo sale ciertos días (ej. un "Sábado …") va como `DADOS/<ese grupo>`.
 - Si las fotos vienen en `.zip`, descomprimilas antes. Las carpetas que empiezan con `_` se ignoran.
 
