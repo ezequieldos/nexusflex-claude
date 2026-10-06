@@ -47,6 +47,7 @@ Mostrá un resumen corto por día: fotos, ok, altas nuevas, preguntas y errores 
 - **responsable** (la zona tiene varios responsables o ninguno): preguntá quién lo llevó y repetí la foto con `nodoEntrega`.
 - **sin_codigo** (la etiqueta no tiene número: es un envío particular que imprimió el vendedor): leé la dirección de la foto (y localidad/destinatario si se ven) y repetí `control_foto_foto ruta:<foto> carpeta:<…> fecha:<…> direccion:<…> localidad:<…>` con `cliente:<id>` o `nodo:<…>` (el nodo que te lo dio, queda sin vendedor). Busca por dirección si ya está cargado; si no, lo carga con un tracking propio de Nexus Flex. Si la dirección no se lee, no la inventes: va a revisión manual.
 - **duplicado / no_ml / fuera_de_red**: van a revisión manual. La foto quedó copiada en `<día>/_sin_identificar`.
+- **Paquete que ya estaba cargado (nuevo)**: antes de dar de alta, el servidor busca en el MISMO cliente un envío igual: por número de ML (aunque la foto lo lea con 1 o 2 dígitos mal), por orden de la tienda o por destinatario y dirección (±7 días). Si lo encuentra, **usa ese envío** y le pasa los estados y la foto en vez de crear otro, y lo avisa («La etiqueta dice X, en el sistema ya está Y…»). Mostráselo al usuario como «unido», no como alta. Solo pregunta (`duplicado`) cuando el parecido es solo por destino y el envío ya figura Entregado otro día: ahí no adivines, preguntá si es el mismo paquete o uno nuevo. Si el usuario dice que **es otro paquete**, se carga igual y queda anotado para que no vuelva a preguntar.
 - **erroresDeCarpeta**: una carpeta no coincide con un grupo o cadete del nodo. Que la renombren (con `control_foto_estructura` a la vista).
 
 **Más cómodo:** al aplicar, lo dudoso se sube solo a la app, en **Logística → 📷 Control por foto**. Ahí cada foto se ve grande y se elige:
@@ -73,3 +74,5 @@ Resumí por día lo que se cargó y lo que quedó en `_sin_identificar` con su m
 - No mueve dinero: registra el movimiento y el traspaso entre nodos; los cierres y las liquidaciones los hace el sistema.
 - No adivines un nodo, un cliente ni un responsable. Si no está claro, preguntá.
 - Los Flex de cuentas vinculadas los cierra Mercado Libre: el control solo los asigna.
+- El «Entregado» que deja el control por foto es una **presunción**: se fecha el día de la foto (hora fija 21:00) y no prueba que el comprador lo haya recibido. Se lo podés decir al usuario si pregunta por un envío que el comprador canceló o devolvió: lo que cuenta para cobrar es lo que Mercado Libre informa y la entrega real registrada.
+- Un número de ML leído de una foto sin QR puede traer un dígito mal. Si la dirección y el destinatario coinciden con otro envío del mismo cliente casi con el mismo número, es el mismo paquete: no lo des de alta de nuevo.
